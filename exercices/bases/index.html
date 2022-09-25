@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/main.js">
+    </script>
+</head>
+
+<body>
+    <H1 id="title">Hello World</H1>
+
+</body>
+
+<!-- On commence doucement en modifiant le titre-->
+<script type="text/javascript">
+    /*for (i = 50; i < 100; i += 2) {
+                                    console.log(i);
+                                    title.style.fontSize = i + "px";
+                                }*/
+    function updateSize(title, size) {
+        title.style.fontSize = size + 'px';
+        size += 2;
+        console.log("coucou");
+        if (size < 100) {
+            setTimeout(function() {
+                updateSize(title, size)
+            }, 50);
+        }
+    }
+    const title = document.getElementById('title');
+    updateSize(title, 50)
+        /*
+        setTimeout(function() {
+            title.style.fontSize = i + "px";
+            title.textContent = "Hello les paydays";
+        }, 5000);
+        //en plus court
+        setTimeout(() => title.style.color = "red", 10000);*/
+</script>
+
+</html>
